@@ -1,0 +1,28 @@
+<H1> Edit Wellness Program Page</H1>
+
+<%= form_for(@wellness_program) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_area :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit%>
+  </div>
+
+<% end %>
