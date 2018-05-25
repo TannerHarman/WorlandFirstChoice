@@ -10,21 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_28_193709) do
+ActiveRecord::Schema.define(version: 2018_05_25_201219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "biographies", force: :cascade do |t|
+  create_table "abouts", force: :cascade do |t|
     t.string "name"
     t.string "greeting"
     t.text "about_me"
     t.text "main_img"
-    t.text "thumb_image"
+    t.text "thumb_img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "slug"
-    t.index ["slug"], name: "index_biographies_on_slug", unique: true
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -33,44 +31,16 @@ ActiveRecord::Schema.define(version: 2018_03_28_193709) do
     t.string "fax_number"
     t.string "email"
     t.string "address"
-    t.text "main_image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string "slug", null: false
-    t.integer "sluggable_id", null: false
-    t.string "sluggable_type", limit: 50
-    t.string "scope"
-    t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
-  end
-
-  create_table "services", force: :cascade do |t|
-    t.string "title"
-    t.text "thumb_image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sub_services", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
     t.text "main_img"
-    t.text "thumb_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "wellnesses", force: :cascade do |t|
+  create_table "programs", force: :cascade do |t|
     t.string "title"
     t.string "subtitle"
     t.text "description"
-    t.integer "price"
+    t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
