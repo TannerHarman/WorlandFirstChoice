@@ -1,0 +1,9 @@
+<h1>Bio Show Page</h1>
+
+<h1><%= @bios.title %></h1>
+
+<em><%= @bios.subtitle %></em>
+
+<p><%= @bios.description %></p>
+
+<%= image_tag @bios.main_img unless @bios.main_img.nil?%>

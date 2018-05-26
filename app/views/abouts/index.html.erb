@@ -4,5 +4,5 @@
   <h2><%= bio.name %></h2>
   <h4><%= bio.greeting %></h4>
   <hp><%= bio.about_me %></hp>
-  <div><%= image_tag bio.thumb_img %></div>
+  <div><%= image_tag bio.thumb_img unless bio.thumb_img.nil? %></div>
 <% end %>

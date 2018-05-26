@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get 'contact/:id/edit', to: 'contacts#edit', as: 'edit_contact'
 
   resources :abouts, except: [:index]
-  get 'about_us', to: 'abouts#index'
+  get 'about-us', to: 'abouts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
