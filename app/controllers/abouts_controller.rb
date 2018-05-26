@@ -20,11 +20,11 @@ class AboutsController < ApplicationController
   end
 
   def edit
-    @bios = About.find(params[:id])
+    @bios = About.friendly.find(params[:id])
   end
 
   def update
-    @bios = About.find(params[:id])
+    @bios = About.friendly.find(params[:id])
 
     respond_to do |format|
       if @bios.update(params.require(:about).permit(:name, :greeting, :about_me))
@@ -36,11 +36,11 @@ class AboutsController < ApplicationController
   end
 
   def show
-    @bios = About.find(params[:id])
+    @bios = About.friendly.find(params[:id])
   end
 
   def destroy
-    @bios = About.find(params[:id])
+    @bios = About.friendly.find(params[:id])
 
     @bios.destroy
     respond_to do |format|
