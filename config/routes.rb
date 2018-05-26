@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'pages#home'
+
   resources :programs, except: [:index, :edit]
   get 'wellness-program', to: 'programs#index'
   get 'wellness-program/edit/:id', to: 'programs#edit', as: 'edit_wellness'
