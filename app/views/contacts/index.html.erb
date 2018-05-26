@@ -5,4 +5,5 @@
   <p> <%= info.email %> </p>
   <p> <%= info.address %> </p>
   <div><%= image_tag info.main_img %></div>
+  <div><%= link_to "Edit", edit_contact_path(info.id) %></div>
 <% end %>

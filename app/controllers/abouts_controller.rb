@@ -12,9 +12,9 @@ class AboutsController < ApplicationController
 
     respond_to do |format|
       if @bios.save
-        format.html { redirect_to about_path, notice: "Your Biography is now Live!"}
+        format.html { redirect_to about_us_path, notice: "Your Biography is now Live!" }
       else
-        format.html { render :new}
+        format.html { render :new }
       end
     end
   end
@@ -28,7 +28,7 @@ class AboutsController < ApplicationController
 
     respond_to do |format|
       if @bios.update(params.require(:about).permit(:name, :greeting, :about_me))
-        format.html { redirect_to about_path, notice: "Your Biography was sucessfully updated."}
+        format.html { redirect_to about_me_path, notice: "Your Biography was sucessfully updated."}
       else
         format.html { render :edit}
       end
