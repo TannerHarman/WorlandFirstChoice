@@ -7,4 +7,6 @@
 <p><%= @bios.about_me %></p>
 
 <%= image_tag @bios.main_img unless @bios.main_img.nil?%>
-<div><%= link_to "Edit", about_edit_path(@bios)%></div>
+<div><%= link_to "Edit", about_edit_path(@bios)%>
+<%= link_to "Delete '#{@bios.name}'", about_path(@bios), method: :delete, data: { confirm: "Are you sure you want to delete '#{@bios.name}'"} %>
+</div>

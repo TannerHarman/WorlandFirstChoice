@@ -38,4 +38,13 @@ class AboutsController < ApplicationController
   def show
     @bios = About.find(params[:id])
   end
+
+  def destroy
+    @bios = About.find(params[:id])
+
+    @bios.destroy
+    respond_to do |format|
+      format.html { redirect_to about_us_path, notice: "Post was Deleted!"}
+    end
+  end
 end

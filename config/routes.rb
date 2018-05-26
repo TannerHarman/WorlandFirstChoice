@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :programs, except: [:index, :edit]
   get 'wellness-program', to: 'programs#index'
-  get 'wellness-program/:id/edit', to: 'programs#edit', as: 'edit_wellness'
+  get 'wellness-program/edit/:id', to: 'programs#edit', as: 'edit_wellness'
 
   resources :contacts, except: [:index, :edit]
   get 'contact', to: 'contacts#index'

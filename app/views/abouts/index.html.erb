@@ -1,8 +1,9 @@
 <h1>About Us</h1>
+<%= link_to "Add Therapist", new_about_path%>
 
 <% @bios.each do |bio| %>
-  <h2> <%= link_to bio.name, about_me_path(bio) %> </h2>
-  <h4> <%= bio.greeting %> </h4>
-  <hp> <%= bio.about_me %> </hp>
-  <div> <%= image_tag bio.thumb_img unless bio.thumb_img.nil? %> </div>
+  <h2><%= link_to bio.name, about_me_path(bio) %></h2>
+  <h4><%= bio.greeting %></h4>
+  <hp><%= bio.about_me %></hp>
+  <div><%= image_tag bio.thumb_img unless bio.thumb_img.nil? %></div>
 <% end %>
