@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   resources :abouts, except: [:index, :show, :edit]
   get 'about-us', to: 'abouts#index', as: 'about_us'
   get ':id/about-me', to: 'abouts#show', as: 'about_me'
-  get ':id/edit/about-me', to: 'abouts#edit', as: 'about_edit'
+  get ':id/about-me/edit', to: 'abouts#edit', as: 'about_edit'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
