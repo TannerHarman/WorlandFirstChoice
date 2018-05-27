@@ -2,6 +2,18 @@
 
 <%= form_for(@contact) do |f| %>
 
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prevented your contact Information from being updated.</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>

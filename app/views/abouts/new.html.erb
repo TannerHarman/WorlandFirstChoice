@@ -1,24 +1,3 @@
 <h1> Create a new Biography</h1>
 
-<%= form_for(@bios) do |f| %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :greeting %>
-    <%= f.text_field :greeting %>
-  </div>
-
-  <div class="field">
-    <%= f.label :about_me %>
-    <%= f.text_area :about_me %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit%>
-  </div>
-
-<% end %>
+<%= render 'form', about: @bio%>
