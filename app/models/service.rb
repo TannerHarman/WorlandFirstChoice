@@ -6,4 +6,8 @@ class Service < ApplicationRecord
 
   belongs_to :service_section, optional: true
   
+ def self.section(id)
+  where(service_sections_id: id)
+ end
+
 end

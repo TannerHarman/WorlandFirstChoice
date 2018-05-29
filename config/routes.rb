@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   resources :service_sections
   resources :services, except: [:show, :edit]
+  get'services/section_one', to: 'services#section_one'
+  get'services/section_two', to: 'services#section_two'
+  get'services/section_three', to: 'services#section_three'
   get 'service/:id', to: "services#show", as: 'service_show'
   get 'service/:id/edit', to: "services#edit", as: 'service_edit'
 

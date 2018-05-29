@@ -20,7 +20,7 @@ end
 
 puts "3 Biographies Created!"
 
-1.times do 
+1.times do
   Program.create!(
     title: "Wellness Program",
     subtitle: 'Would you like to improve your…',
@@ -46,7 +46,7 @@ end
 
 puts "Contact Info Created!"
 
-11.times do |count|
+4.times do |count|
   Service.create!(
     title: "Amazing Service #{count + 1}",
     subtitle: "subtitle Service",
@@ -55,7 +55,33 @@ puts "Contact Info Created!"
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     main_img: 'http://via.placeholder.com/600x400', 
     thumb_img: 'http://via.placeholder.com/350x200',
-    service_sections_id: ServiceSection.last.id
+    service_sections_id: 1
+  )
+end
+
+4.times do |count|
+  Service.create!(
+    title: "Amazing Service #{count + 5}",
+    subtitle: "subtitle Service",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+    main_img: 'http://via.placeholder.com/600x400', 
+    thumb_img: 'http://via.placeholder.com/350x200',
+    service_sections_id: 2
+  )
+end
+
+3.times do |count|
+  Service.create!(
+    title: "Amazing Service #{count + 9}",
+    subtitle: "subtitle Service",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+    main_img: 'http://via.placeholder.com/600x400', 
+    thumb_img: 'http://via.placeholder.com/350x200',
+    service_sections_id: 3
   )
 end
 
