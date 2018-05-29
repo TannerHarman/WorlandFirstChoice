@@ -1,0 +1,2 @@
+class ServiceSectionsController < ApplicationController
+end

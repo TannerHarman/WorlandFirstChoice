@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :service_sections
+  resources :services
   root to: 'pages#home'
 
   resources :programs, except: [:index, :edit]

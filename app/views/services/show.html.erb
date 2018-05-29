@@ -1,0 +1,7 @@
+<h2><%= @service.title %></h2>
+  <p><%= @service.subtitle %></p>
+  <p><%= @service.body %></p>
+  <div><%= image_tag @service.main_img unless @service.main_img.nil? %></div>
+
+  <div><%= link_to "Edit", edit_service_path(@service)%>
+<%= link_to "Delete '#{@service.title}'", service_path(@service), method: :delete, data: { confirm: "Are you sure you want to delete '#{@service.title}'"} %></div>

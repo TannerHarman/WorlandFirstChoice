@@ -1,0 +1,2 @@
+class ServiceSection < ApplicationRecord
+end
