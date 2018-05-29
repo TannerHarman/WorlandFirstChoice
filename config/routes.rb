@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :service_sections
-  resources :services
   root to: 'pages#home'
+
+  resources :service_sections
+  resources :services, except: [:show, :edit]
+  get 'service/:id', to: "services#show", as: 'service_show'
+  get 'service/:id/edit', to: "services#edit", as: 'service_edit'
+
+
 
   resources :programs, except: [:index, :edit]
   get 'wellness-program', to: 'programs#index'

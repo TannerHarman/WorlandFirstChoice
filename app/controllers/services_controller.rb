@@ -20,11 +20,11 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    @service = Service.find(params[:id])
+    @service = Service.friendly.find(params[:id])
   end
 
   def update
-    @service = Service.find(params[:id])
+    @service = Service.friendly.find(params[:id])
 
     respond_to do |format|
       if @service.update(params.require(:service).permit(:title, :subtitle, :body))
@@ -36,11 +36,11 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service = Service.find(params[:id])
+    @service = Service.friendly.find(params[:id])
   end
 
   def destroy
-    @service = Service.find(params[:id])
+    @service = Service.friendly.find(params[:id])
 
     @service.destroy
     respond_to do |format|
