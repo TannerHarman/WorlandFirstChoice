@@ -1,3 +1,11 @@
+3.times do |count|
+  ServiceSection.create!(
+    title: "Service Section #{count + 1}"
+  )
+end
+
+puts "Service Categories Created!"
+
 3.times do |bio|
   About.create!(
     name: "Therapist #{bio + 1}", 
@@ -38,7 +46,6 @@ end
 
 puts "Contact Info Created!"
 
-
 11.times do |count|
   Service.create!(
     title: "Amazing Service #{count + 1}",
@@ -47,16 +54,9 @@ puts "Contact Info Created!"
     
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     main_img: 'http://via.placeholder.com/600x400', 
-    thumb_img: 'http://via.placeholder.com/350x200'
+    thumb_img: 'http://via.placeholder.com/350x200',
+    service_sections_id: ServiceSection.last.id
   )
 end
 
 puts "Services Created!"
-
-3.times do |count|
-  ServiceSection.create!(
-    title: "Service #{count + 1}"
-  )
-end
-
-puts "Service Categories Created!"

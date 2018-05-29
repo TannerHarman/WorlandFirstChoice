@@ -4,6 +4,6 @@ class Service < ApplicationRecord
 
   validates_presence_of :title, :subtitle
 
-  belongs_to :service_section
+  belongs_to :service_section, optional: true
   
 end
