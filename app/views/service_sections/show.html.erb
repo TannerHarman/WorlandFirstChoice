@@ -1,1 +1,9 @@
 <h2><%= @section.title %></h2>
+<%= link_to "Add Service", new_service_path%>
+
+<% @services.each do |service| %>
+  <h2><%= link_to service.title, service_show_path(service) %></h2>
+  <p><%= service.subtitle %></p>
+  <p><%= service.body %></p>
+  <div><%= image_tag service.thumb_img unless service.thumb_img.nil? %></div>
+<% end %>

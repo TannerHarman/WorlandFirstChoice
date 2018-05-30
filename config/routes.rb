@@ -2,11 +2,12 @@ Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   root to: 'pages#home'
 
-  resources :service_sections
-  resources :services, except: [:show, :edit]
-  get'services/section_one', to: 'services#section_one', as: 'services1'
-  get'services/section_two', to: 'services#section_two', as: 'services2'
-  get'services/section_three', to: 'services#section_three', as: 'services3'
+  resources :service_sections, except: [:index, :show]
+  get 'services', to: "service_sections#index", as: 'services_index'
+  get 'services/:id', to: "service_sections#show", as: 'services_show'
+
+  resources :services, except: [:index, :show, :edit]
+  get 'all-services', to: "services#index", as: 'service_index'
   get 'service/:id', to: "services#show", as: 'service_show'
   get 'service/:id/edit', to: "services#edit", as: 'service_edit'
 

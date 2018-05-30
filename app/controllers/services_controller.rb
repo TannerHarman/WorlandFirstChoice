@@ -3,18 +3,6 @@ class ServicesController < ApplicationController
     @services = Service.all
   end
 
-  def section_one
-    @services = Service.section(1)
-  end
-
-  def section_two
-    @services = Service.section(2)
-  end
-
-  def section_three
-    @services = Service.section(3)
-  end
-
   def new
     @service = Service.new
   end

@@ -13,7 +13,7 @@ class ServiceSectionsController < ApplicationController
 
     respond_to do |format|
       if @section.save
-        format.html { redirect_to service_sections_path, notice: "New Category has been Created" }
+        format.html { redirect_to services_index_path, notice: "New Category has been Created" }
       else
         format.html { render :new }
       end
@@ -29,7 +29,7 @@ class ServiceSectionsController < ApplicationController
 
     respond_to do |format|
       if @section.update(params.require(:service_section).permit(:title))
-        format.html { redirect_to service_sections_path, notice: "Your Category has been updated"}
+        format.html { redirect_to services_index_path, notice: "Your Category has been updated"}
       else
         format.html { render :edit}
       end
@@ -38,6 +38,7 @@ class ServiceSectionsController < ApplicationController
 
   def show
     @section = ServiceSection.find(params[:id])
+    @services = Service.section(ServiceSection.find(params[:id]))
   end
 
   def destroy
@@ -45,7 +46,7 @@ class ServiceSectionsController < ApplicationController
 
     @section.destroy
     respond_to do |format|
-      format.html { redirect_to service_sections_path, notice: "Category has been removed"}
+      format.html { redirect_to services_index_path, notice: "Category has been removed"}
     end
   end
 end
