@@ -1,6 +1,7 @@
 3.times do |count|
   ServiceSection.create!(
-    title: "Service Section #{count + 1}"
+    title: "Service Section #{count + 1}",
+    main_img: 'http://via.placeholder.com/350x200',
   )
 end
 
