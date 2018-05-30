@@ -21,11 +21,11 @@ class ServiceSectionsController < ApplicationController
   end
 
   def edit
-    @section = ServiceSection.find(params[:id])
+    @section = ServiceSection.friendly.find(params[:id])
   end
 
   def update
-    @section = ServiceSection.find(params[:id])
+    @section = ServiceSection.friendly.find(params[:id])
 
     respond_to do |format|
       if @section.update(params.require(:service_section).permit(:title))
@@ -37,12 +37,12 @@ class ServiceSectionsController < ApplicationController
   end
 
   def show
-    @section = ServiceSection.find(params[:id])
-    @services = Service.section(ServiceSection.find(params[:id]))
+    @section = ServiceSection.friendly.find(params[:id])
+    @services = Service.section(ServiceSection.friendly.find(params[:id]))
   end
 
   def destroy
-    @section = ServiceSection.find(params[:id])
+    @section = ServiceSection.friendly.find(params[:id])
 
     @section.destroy
     respond_to do |format|
