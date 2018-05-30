@@ -2,7 +2,14 @@
 <%= link_to "Add Service", new_service_section_path%>
 
 <% @section.each do |section| %>
-  <h2><%= link_to section.title, service_section_path(section) %></h2>
+<%# Need a much better solution. %>
+  <% if section.id == 1 %>
+    <h2><%= link_to section.title, services2_path %></h2>
+  <% elsif section.id == 2 %>
+    <h2><%= link_to section.title, services2_path %></h2>
+  <% elsif section.id == 3 %>
+    <h2><%= link_to section.title, services3_path %></h2>
+  <% end %>
     <div><%= link_to "Edit", edit_service_section_path(section)%>
-<%= link_to "Delete '#{section.title}'", service_section_path(section), method: :delete, data: { confirm: "Are you sure you want to delete '#{section.title}'"} %></div>
+    <%= link_to "Delete '#{section.title}'", service_section_path(section), method: :delete, data: { confirm: "Are you sure you want to delete '#{section.title}'"} %></div>
 <% end %>
