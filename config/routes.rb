@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get 'service/:id', to: "services#show", as: 'service_show'
   get 'service/:id/edit', to: "services#edit", as: 'service_edit'
 
-
-
   resources :programs, except: [:index, :edit]
   get 'wellness-program', to: 'programs#index'
   get 'wellness-program/edit/:id', to: 'programs#edit', as: 'edit_wellness'
