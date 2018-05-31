@@ -4,10 +4,5 @@
     <div><%= link_to "Wellness Program", wellness_index_path %></div>
     <div><%= link_to "Contact Us", contact_index_path %></div>
     <div><%= link_to "Facebook", "https://www.facebook.com/Worland-Physical-Therapy-1551997184864218/", :target => "_blank" %></div>
-    <% if current_user.is_a?(User) %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <div><%= link_to "Login", new_user_session_path %></div>
-      <div><%= link_to "Register", new_user_registration_path %></div>
-    <% end %>
+    <%= login_helper %>
   </div>
