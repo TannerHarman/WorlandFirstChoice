@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get 'services', to: "service_sections#index", as: 'services_index'
   get 'services/:id', to: "service_sections#show", as: 'services_show'
 
-  resources :services, except: [:index, :show, :edit]
+  resources :services, except: [:index, :show, :edit, :new]
   get 'all-services', to: "services#index", as: 'service_index'
   get 'service/:id', to: "services#show", as: 'service_show'
   get 'service/:id/edit', to: "services#edit", as: 'service_edit'
+  get 'add-service', to: "services#new", as: 'service_new'
 
   resources :programs, except: [:index, :edit]
   get 'wellness-program', to: 'programs#index', as: 'wellness_index'
