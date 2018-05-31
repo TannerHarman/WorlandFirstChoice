@@ -2,10 +2,10 @@ module ApplicationHelper
 
   def login_helper
     if current_user.is_a?(GuestUser)
-      (content_tag(:div, link_to("Login", new_user_session_path))) +
-      (content_tag(:div, link_to( "Register", new_user_registration_path)))
+      (content_tag(:a, link_to("Login", new_user_session_path))) +
+      (content_tag(:a, link_to( "Register", new_user_registration_path)))
     else
-      content_tag(:div, link_to("Logout", destroy_user_session_path, method: :delete))
+      link_to("Logout", destroy_user_session_path, method: :delete)
     end
   end
 end
