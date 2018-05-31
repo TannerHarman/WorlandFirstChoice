@@ -1,5 +1,5 @@
 <h1>About Us</h1>
-<%= link_to "Add Therapist", new_about_path%>
+<%= link_to "Add Therapist", new_about_path if logged_in?(:site_admin, :editor)%>
 
 <% @bios.each do |bio| %>
   <h2><%= link_to bio.name, about_me_path(bio) %></h2>

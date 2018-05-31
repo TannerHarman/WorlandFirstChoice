@@ -3,5 +3,5 @@
   <p><%= wellness.subtitle %></p>
   <p><%= wellness.description %></p>
   <p><%= number_to_currency(wellness.price) %></p>
-  <div><%= link_to "Edit", edit_wellness_path(wellness) %></div>
+  <div><%= link_to "Edit", edit_wellness_path(wellness) if logged_in?(:site_admin, :editor)%></div>
 <% end %>

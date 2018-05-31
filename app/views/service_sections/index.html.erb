@@ -3,10 +3,10 @@
 <% @section.each do |section| %>
     <h2><%= link_to section.title, services_show_path(section) %></h2>
     <div><%= image_tag section.main_img unless section.main_img.nil? %></div>
-    <div><%= link_to "Edit", edit_service_section_path(section)%>
-    <%= link_to "Delete '#{section.title}'", service_section_path(section), method: :delete, data: { confirm: "Are you sure you want to delete '#{section.title}'"} %></div>
+    <div><%= link_to "Edit", edit_service_section_path(section) if logged_in?(:site_admin, :editor)%>
+    <%= link_to "Delete '#{section.title}'", service_section_path(section), method: :delete, data: { confirm: "Are you sure you want to delete '#{section.title}'"} if logged_in?(:site_admin, :editor)%></div>
     <hr/>
 <% end %>
 
 <%= link_to "See All Services", service_index_path%>
-<%= link_to "Add Service Category", new_service_section_path%>
+<%= link_to "Add Service Category", new_service_section_path if logged_in?(:site_admin, :editor)%>

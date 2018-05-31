@@ -1,5 +1,5 @@
 <h2><%= @section.title %></h2>
-<%= link_to "Add Service", new_service_path%>
+<%= link_to "Add Service", service_new_path if logged_in?(:site_admin, :editor)%>
 
 <% @services.each do |service| %>
   <h2><%= link_to service.title, service_show_path(service) %></h2>

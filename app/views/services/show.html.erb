@@ -3,5 +3,5 @@
   <p><%= @service.body %></p>
   <div><%= image_tag @service.main_img unless @service.main_img.nil? %></div>
 
-  <div><%= link_to "Edit", service_edit_path(@service)%>
-<%= link_to "Delete '#{@service.title}'", service_path(@service), method: :delete, data: { confirm: "Are you sure you want to delete '#{@service.title}'"} %></div>
+  <div><%= link_to "Edit", service_edit_path(@service) if logged_in?(:site_admin, :editor)%>
+<%= link_to "Delete '#{@service.title}'", service_path(@service), method: :delete, data: { confirm: "Are you sure you want to delete '#{@service.title}'"} if logged_in?(:site_admin, :editor)%></div>
