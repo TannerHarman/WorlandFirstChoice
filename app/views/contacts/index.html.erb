@@ -4,6 +4,7 @@
   <p> <%= number_to_phone(info.fax_number, area_code: true) %> </p>
   <p> <%= info.email %> </p>
   <p> <%= info.address %> </p>
+  <%= link_to "Facebook", "https://www.facebook.com/Worland-Physical-Therapy-1551997184864218/", :target => "_blank" %>
   <div><%= image_tag info.main_img %></div>
   <div><%= link_to "Edit", edit_contact_path(info.id) if logged_in?(:site_admin, :editor)%></div>
 <% end %>
