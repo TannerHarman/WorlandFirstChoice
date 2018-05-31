@@ -2,6 +2,6 @@
   <h1><%= wellness.title %></h1>
   <p><%= wellness.subtitle %></p>
   <p><%= wellness.description %></p>
-  <p><%= wellness.price %></p>
+  <p><%= number_to_currency(wellness.price) %></p>
   <div><%= link_to "Edit", edit_wellness_path(wellness) %></div>
 <% end %>
