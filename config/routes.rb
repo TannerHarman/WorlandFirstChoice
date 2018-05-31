@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   get 'service/:id/edit', to: "services#edit", as: 'service_edit'
 
   resources :programs, except: [:index, :edit]
-  get 'wellness-program', to: 'programs#index'
+  get 'wellness-program', to: 'programs#index', as: 'wellness_index'
   get 'wellness-program/edit/:id', to: 'programs#edit', as: 'edit_wellness'
 
   resources :contacts, except: [:index, :edit]
-  get 'contact', to: 'contacts#index'
+  get 'contact', to: 'contacts#index', as: 'contact_index'
   get 'contact/edit/:id', to: 'contacts#edit', as: 'edit_contact'
 
   resources :abouts, except: [:index, :show, :edit]
