@@ -1,34 +1,34 @@
-<%= form_for(@bios) do |f| %>
+  <%= form_for(@bios) do |f| %>
 
-  <% if @bios.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bios.errors.count, "error") %> prohibited the Creation of New Therapist</h2>
+    <% if @bios.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@bios.errors.count, "error") %> prohibited the Creation of New Therapist</h2>
 
-      <ul>
-      <% @bios.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @bios.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
     </div>
+
+    <div class="form-group">
+      <%= f.label :greeting %>
+      <%= f.text_field :greeting, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :about_me %>
+      <%= f.text_area :about_me, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit%>
+    </div>
+
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :greeting %>
-    <%= f.text_field :greeting %>
-  </div>
-
-  <div class="field">
-    <%= f.label :about_me %>
-    <%= f.text_area :about_me %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit%>
-  </div>
-
-<% end %>
