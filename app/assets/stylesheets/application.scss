@@ -130,6 +130,9 @@ body {
  * Custom Styles
  */
 
+ .card {
+   margin: auto;
+ }
  .card-body {
    color: black;
    text-align: left;
@@ -147,5 +150,6 @@ body {
  }
 
  .actions {
+   padding-top: 10px;
    text-align: center;
  }
