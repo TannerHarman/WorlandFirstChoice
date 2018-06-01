@@ -134,10 +134,18 @@ body {
    color: black;
    text-align: left;
  }
+
+ .card-body h2 {
+  text-align: center;
+}
  
  .auth-links {
   padding-top: 15px;
 }
  .auth-links a {
    color: black;
+ }
+
+ .actions {
+   text-align: center;
  }
