@@ -1,4 +1,6 @@
-<h1>Services Page</h1>
-<%= link_to "Add Service", new_service_path if logged_in?(:site_admin, :editor)%>
+<main role="main" class="inner cover">
+  <h1>Services Page</h1>
+  <%= link_to "Add Service", new_service_path if logged_in?(:site_admin, :editor)%>
 
-<%= render @services %>
+  <%= render @services %>
+</main>
