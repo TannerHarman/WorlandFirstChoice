@@ -19,6 +19,8 @@
 
 <% if logged_in?(:site_admin, :editor) %>
   <%= link_to new_about_path do%>
-    <p>Add Therapist <%= fa_icon 'plus' %></p>
+    <div class="icons">
+      <p>Add Therapist <%= fa_icon 'plus' %></p>
+    </div>
   <% end %>
 <% end %>
