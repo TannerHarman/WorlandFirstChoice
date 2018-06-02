@@ -24,11 +24,11 @@
 
     <div class="form-group">
       <%= f.label :about_me %>
-      <%= f.text_area :about_me, class: 'form-control' %>
+      <%= f.text_area :about_me, class: 'form-control', rows: 15 %>
     </div>
 
     <div class="actions">
-      <%= f.submit%>
+      <%= f.submit 'Save Therapist', class: 'btn btn-primary'%>
     </div>
 
   <% end %>
