@@ -87,3 +87,5 @@ end
 end
 
 puts "Services Created!"
+
+User.create!(email: "test2@test.com", name: "Tanner", password:"asdfasdf", password_confirmation:"asdfasdf", roles: "site_admin")
