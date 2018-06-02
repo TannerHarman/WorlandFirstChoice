@@ -1,14 +1,31 @@
-<main role="main" class="inner cover">
-    <h1>Service Section Index Page</h1>
+<h1>Service Section Index Page</h1>
 
-    <% @section.each do |section| %>
-        <h2><%= link_to section.title, services_show_path(section) %></h2>
-        <div><%= image_tag section.main_img unless section.main_img.nil? %></div>
-        <div><%= link_to "Edit", edit_service_section_path(section) if logged_in?(:site_admin, :editor)%>
-        <%= link_to "Delete '#{section.title}'", service_section_path(section), method: :delete, data: { confirm: "Are you sure you want to delete '#{section.title}'"} if logged_in?(:site_admin, :editor)%></div>
-        <hr/>
-    <% end %>
+<div class="album card-text">
+  <div class="container">
+    <div class="row">
+        <% @section.each do |section| %>
+          <%= link_to services_show_path(section) do%>
+            <div class="card">
+              <%= image_tag section.main_img unless section.main_img.nil? %>
+              <div class="card-text">
+                <h3><%=link_to section.title, services_show_path(section) %></h3>
+              </div>
+              <div class="icons">
+                <%= link_to "#{fa_icon 'edit'}".html_safe, edit_service_section_path(section) if logged_in?(:site_admin, :editor)%>
+                <%= link_to "#{fa_icon 'trash'}".html_safe, service_section_path(section), method: :delete, data: { confirm: "Are you sure you want to delete '#{section.title}'"} if logged_in?(:site_admin, :editor)%>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+</div> 
 
-    <%= link_to "See All Services", service_index_path%>
+<% if logged_in?(:site_admin, :editor) %>
+  <%= link_to new_about_path do%>
+    <div class="icons">
+    <%= link_to "See All Services", service_index_path%> |
     <%= link_to "Add Service Category", new_service_section_path if logged_in?(:site_admin, :editor)%>
-</main>
+    </div>
+  <% end %>
+<% end %>
