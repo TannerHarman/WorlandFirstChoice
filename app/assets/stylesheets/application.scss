@@ -169,6 +169,14 @@ body {
    color: black;
  }
 
+ .card-text a {
+  color: black;
+}
+
+.card-text a:hover {
+  text-decoration: none;
+}
+
  .icons {
   text-align: right;
   padding-right: 10px;

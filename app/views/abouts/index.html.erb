@@ -8,7 +8,7 @@
             <div class="card">
               <%= image_tag bio.thumb_img unless bio.thumb_img.nil? %>
               <div class="card-text">
-                <div><%=link_to bio.name %>   |   <%= bio.greeting %></div>
+                <div><%=link_to bio.name, about_me_path(bio) %></div>
               </div>
             </div>
           <% end %>
