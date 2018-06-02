@@ -1,6 +1,5 @@
 @import "bootstrap";
 @import "font-awesome";
-@import "abouts.scss";
 /*
  * Globals
  */
@@ -135,6 +134,7 @@ body {
  .card {
    margin: 10px auto;
  }
+
  .card-body {
    color: black;
    text-align: left;
@@ -159,3 +159,17 @@ body {
  .new-therapist > .card {
    max-width: 600px;
  }
+
+ .image {
+  max-width: 100%;
+  height: auto;
+ }
+
+ .card-text {
+   color: black;
+ }
+
+ .icons {
+  text-align: right;
+  padding-right: 10px;
+}
