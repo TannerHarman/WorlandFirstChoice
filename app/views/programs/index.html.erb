@@ -1,7 +1,17 @@
-<% @wellness_program.each do |wellness| %>
-  <h1><%= wellness.title %></h1>
-  <p><%= wellness.subtitle %></p>
-  <p><%= wellness.description %></p>
-  <p><%= number_to_currency(wellness.price) %></p>
-  <div><%= link_to "Edit", edit_wellness_path(wellness) if logged_in?(:site_admin, :editor)%></div>
-<% end %>
+<div class="container">
+  <div class="show">
+    <div class="row">
+      <div class="card">
+         <div class="card-body">
+          <% @wellness_program.each do |wellness| %>
+            <h2><%= wellness.title %></h2>
+            <p><%= wellness.subtitle %></p>
+            <p><%= wellness.description %></p>
+            <p><%= number_to_currency(wellness.price) %></p>
+            <div><%= link_to "Edit", edit_wellness_path(wellness) if logged_in?(:site_admin, :editor)%></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
