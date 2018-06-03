@@ -1,7 +1,23 @@
-<h2><%= @service.title %></h2>
-  <p><%= @service.subtitle %></p>
-  <p><%= @service.body %></p>
-  <div><%= image_tag @service.main_img unless @service.main_img.nil? %></div>
+<div class="container">
+  <div class="show">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-5">
+            <h2><%= @service.title %></h2>
+            <em><%= @service.subtitle %></em>
+            <p><%= @service.body %></p>
+          </div>
 
-  <div><%= link_to "Edit", service_edit_path(@service) if logged_in?(:site_admin, :editor)%>
-<%= link_to "Delete '#{@service.title}'", service_path(@service), method: :delete, data: { confirm: "Are you sure you want to delete '#{@service.title}'"} if logged_in?(:site_admin, :editor)%></div>
+          <div class="col-md-7">
+            <%= image_tag(@service.main_img, class: "image") %>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="icons">
+        <%= link_to "#{fa_icon 'edit'}".html_safe, service_edit_path(@service) if logged_in?(:site_admin, :editor) %>
+        <%= link_to "#{fa_icon 'trash'}".html_safe, service_path(@service), method: :delete, data: { confirm: "Are you sure you want to delete '#{@bios.name}'"} if logged_in?(:site_admin, :editor) %>
+      </div>
+  </div>
+</div>
