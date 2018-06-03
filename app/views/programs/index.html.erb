@@ -8,10 +8,12 @@
             <p><%= wellness.subtitle %></p>
             <p><%= wellness.description %></p>
             <p><%= number_to_currency(wellness.price) %></p>
-            <div><%= link_to "Edit", edit_wellness_path(wellness) if logged_in?(:site_admin, :editor)%></div>
-          <% end %>
         </div>
       </div>
     </div>
   </div>
+  <div class="icons">
+    <%= link_to "#{fa_icon 'edit'}".html_safe, edit_wellness_path(wellness) if logged_in?(:site_admin, :editor) %>
+  </div>
+  <% end %>
 </div>

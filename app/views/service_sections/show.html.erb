@@ -1,5 +1,5 @@
 <h1><%= @section.title %></h1>
-<%= link_to "Add Service", service_new_path if logged_in?(:site_admin, :editor)%>
+
 
 <div class="album card-text">
   <div class="container">
@@ -17,3 +17,11 @@
       </div>
   </div>
 </div> 
+
+<% if logged_in?(:site_admin, :editor) %>
+  <%= link_to service_new_path do%>
+    <div class="icons">
+      <p>Add Service <%= fa_icon 'plus' %></p>
+    </div>
+  <% end %>
+<% end %>
