@@ -1,15 +1,15 @@
-<div class="container">
+<div class="container-fluid">
   <div class="show">
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-7" align="center">
             <h2><%= @bios.name %></h2>
             <em><%= @bios.greeting %></em>
-            <p><%= @bios.about_me %></p>
+            <p class="card-text"><%= @bios.about_me%></p>
           </div>
 
-          <div class="col-md-7">
+          <div class="col-md-5" align="center">
             <%= image_tag(@bios.main_img, class: "image") %>
           </div>
         </div>
