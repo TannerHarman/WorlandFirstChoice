@@ -1,6 +1,12 @@
-<main role="main" class="inner cover">
-  <h1>Services Page</h1>
-  <%= link_to "Add Service", new_service_path if logged_in?(:site_admin, :editor)%>
+<div class="album card-text">
+  <div class="container">
+        <h1>Services Page</h1>
 
-  <%= render @services %>
-</main>
+      <%= link_to "Add Service", new_service_path if logged_in?(:site_admin, :editor)%>
+    <div class="row">
+
+      <%= render @services %>
+    </main>
+    </div>
+  </div>
+</div> 
