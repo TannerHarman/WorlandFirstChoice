@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: WorlandFirstChoice_development
+  database: WorlandFirstChoice1_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: WorlandFirstChoice
+  #username: WorlandFirstChoice1
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: WorlandFirstChoice_test
+  database: WorlandFirstChoice1_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: WorlandFirstChoice_production
-  username: WorlandFirstChoice
-  password: <%= ENV['WORLANDFIRSTCHOICE_DATABASE_PASSWORD'] %>
+  database: WorlandFirstChoice1_production
+  username: WorlandFirstChoice1
+  password: <%= ENV['WORLANDFIRSTCHOICE1_DATABASE_PASSWORD'] %>
