@@ -1,24 +1,5 @@
-# README
+# T0-Do
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* x Fix links from Service Sections to their respective category view pages	+This README would normally document whatever steps are necessary to get the
+* o Implement confirmable Functionality into Devise for User sign ups	+application up and running.
+* o Remove Login/Register Links before final deployment
