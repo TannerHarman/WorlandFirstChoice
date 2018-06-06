@@ -4,6 +4,10 @@ class About < ApplicationRecord
 
   validates_presence_of :name, :greeting, :about_me
 
+  def self.by_position
+    order("position ASC")
+  end
+
   after_initialize :set_defauls
 
   def set_defauls
