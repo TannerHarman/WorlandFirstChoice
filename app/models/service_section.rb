@@ -4,6 +4,10 @@ class ServiceSection < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  def self.by_position
+    order("position ASC")
+  end
+  
   has_many :services
 
   after_initialize :set_defauls

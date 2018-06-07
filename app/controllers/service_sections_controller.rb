@@ -2,7 +2,15 @@ class ServiceSectionsController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all, editor: :all
 
   def index
-    @section = ServiceSection.all
+    @section = ServiceSection.by_position
+  end
+
+  def sort
+    params[:order].each do |key, value|
+      About.find(value[:id]).update(position: value[:position])
+    end
+
+    render body: nil
   end
 
   def new
