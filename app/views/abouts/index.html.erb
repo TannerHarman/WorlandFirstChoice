@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row sortable">
         <% @bios.each do |bio| %>
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <%= link_to about_me_path(bio) do%>
               <div class="card" data-id="<%= bio.id %>">
                 <%= image_tag(bio.thumb_img, class: "index-image") unless bio.thumb_img.nil? %>
