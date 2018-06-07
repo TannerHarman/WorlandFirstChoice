@@ -1,7 +1,15 @@
 class ServicesController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all, editor: :all
   def index
-    @services = Service.all
+    @services = Service.by_position
+  end
+
+  def sort
+    params[:order].each do |key, value|
+      Service.find(value[:id]).update(position: value[:position])
+    end
+
+    render body: nil
   end
 
   def new
