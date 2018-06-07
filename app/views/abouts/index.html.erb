@@ -4,14 +4,16 @@
   <div class="container">
     <div class="row sortable">
         <% @bios.each do |bio| %>
-          <%= link_to about_me_path(bio) do%>
-            <div class="card" data-id="<%= bio.id %>">
-              <%= image_tag bio.thumb_img unless bio.thumb_img.nil? %>
-              <div class="card-text">
-                <h3><%=link_to bio.name, about_me_path(bio) %></h3>
+          <div class="col-md-4">
+            <%= link_to about_me_path(bio) do%>
+              <div class="card" data-id="<%= bio.id %>">
+                <%= image_tag(bio.thumb_img, class: "index-image") unless bio.thumb_img.nil? %>
+                <div class="card-text">
+                  <h3><%=link_to bio.name, about_me_path(bio) %></h3>
+                </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         <% end %>
       </div>
   </div>
