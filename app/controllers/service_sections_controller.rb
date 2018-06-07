@@ -7,7 +7,7 @@ class ServiceSectionsController < ApplicationController
 
   def sort
     params[:order].each do |key, value|
-      About.find(value[:id]).update(position: value[:position])
+      ServiceSection.find(value[:id]).update(position: value[:position])
     end
 
     render body: nil

@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'wpt-admin', sign_out: 'logout', sign_up: 'register' }
   root to: 'pages#home'
 
-  resources :service_sections, except: [:index, :show]
+  resources :service_sections, except: [:index, :show] do
+    put :sort, on: :collection
+  end 
   get 'services', to: "service_sections#index", as: 'services_index'
   get 'services/:id', to: "service_sections#show", as: 'services_show'
 
