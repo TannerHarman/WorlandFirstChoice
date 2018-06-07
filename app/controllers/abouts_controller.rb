@@ -1,5 +1,5 @@
 class AboutsController < ApplicationController
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all, editor: :all
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all, editor: :all
   def index
     @bios = About.by_position
   end
