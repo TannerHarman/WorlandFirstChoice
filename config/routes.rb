@@ -20,9 +20,11 @@ Rails.application.routes.draw do
   get 'contact', to: 'contacts#index', as: 'contact_index'
   get 'contact/edit/:id', to: 'contacts#edit', as: 'edit_contact'
 
-  resources :abouts, except: [:index, :show, :edit]
-  get 'about-us', to: 'abouts#index', as: 'about_us'
-  get ':id/about-me', to: 'abouts#show', as: 'about_me'
-  get ':id/about-me/edit', to: 'abouts#edit', as: 'about_edit'
+  resources :abouts, except: [:index, :show, :edit] do
+    put :sort, on: :collection
+  end
+    get 'about-us', to: 'abouts#index', as: 'about_us'
+    get ':id/about-me', to: 'abouts#show', as: 'about_me'
+    get ':id/about-me/edit', to: 'abouts#edit', as: 'about_edit'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

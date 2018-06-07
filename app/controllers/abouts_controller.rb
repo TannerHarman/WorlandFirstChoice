@@ -4,6 +4,14 @@ class AboutsController < ApplicationController
     @bios = About.by_position
   end
 
+  def sort
+    params[:order].each do |key, value|
+      About.find(value[:id]).update(position: value[:position])
+    end
+
+    render body: nil
+  end
+
   def new
     @bios = About.new
   end
