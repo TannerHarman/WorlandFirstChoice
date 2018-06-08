@@ -17,7 +17,7 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @service = Service.new(params.require(:service).permit(:title, :subtitle, :body))
+    @service = Service.new(service_params)
 
     respond_to do |format|
       if @service.save
@@ -36,7 +36,7 @@ class ServicesController < ApplicationController
     @service = Service.friendly.find(params[:id])
 
     respond_to do |format|
-      if @service.update(params.require(:service).permit(:title, :subtitle, :body))
+      if @service.update(service_params)
         format.html { redirect_to services_path, notice: "New Service has been Created"}
       else
         format.html { render :edit}
@@ -55,5 +55,14 @@ class ServicesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to services_path, notice: "Service has been removed"}
     end
+  end
+
+  private 
+  def service_params
+    params.require(:service).permit(
+      :title, 
+      :subtitle, 
+      :body
+      )
   end
 end

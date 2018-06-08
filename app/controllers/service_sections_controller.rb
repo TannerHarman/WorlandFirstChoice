@@ -18,7 +18,7 @@ class ServiceSectionsController < ApplicationController
   end
 
   def create
-    @section = ServiceSection.new(params.require(:service_section).permit(:title))
+    @section = ServiceSection.new(service_section_params)
 
     respond_to do |format|
       if @section.save
@@ -37,7 +37,7 @@ class ServiceSectionsController < ApplicationController
     @section = ServiceSection.friendly.find(params[:id])
 
     respond_to do |format|
-      if @section.update(params.require(:service_section).permit(:title))
+      if @section.update(service_section_params)
         format.html { redirect_to services_index_path, notice: "Your Category has been updated"}
       else
         format.html { render :edit}
@@ -57,5 +57,10 @@ class ServiceSectionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to services_index_path, notice: "Category has been removed"}
     end
+  end
+
+  private 
+  def service_section_params
+    params.require(:service_section).permit(:title)
   end
 end

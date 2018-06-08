@@ -12,11 +12,23 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
 
     respond_to do |format|
-      if @contact.update(params.require(:contact).permit(:title, :phone_number, :fax_number, :email, :address, :main_img))
+      if @contact.update(contact_params)
         format.html { redirect_to action: "index", notice: "Your contact information has been updated."}
       else
         format.html {render :edit}
       end
     end
+  end
+
+  private 
+  def contact_params
+    params.require(:contact).permit(
+      :title, 
+      :phone_number, 
+      :fax_number, 
+      :email, 
+      :address, 
+      :main_img
+      )
   end
 end

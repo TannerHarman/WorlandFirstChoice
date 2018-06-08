@@ -17,7 +17,7 @@ class AboutsController < ApplicationController
   end
 
   def create
-    @bios = About.new(params.require(:about).permit(:name, :greeting, :about_me))
+    @bios = About.new(about_params)
 
     respond_to do |format|
       if @bios.save
@@ -36,7 +36,7 @@ class AboutsController < ApplicationController
     @bios = About.friendly.find(params[:id])
 
     respond_to do |format|
-      if @bios.update(params.require(:about).permit(:name, :greeting, :about_me))
+      if @bios.update(about_params)
         format.html { redirect_to about_me_path, notice: "Your Biography was sucessfully updated."}
       else
         format.html { render :edit}
@@ -56,4 +56,17 @@ class AboutsController < ApplicationController
       format.html { redirect_to about_us_path, notice: "Post was Deleted!"}
     end
   end
+
+  private 
+
+  def about_params
+    params.require(:about).permit(
+      :name, 
+      :greeting, 
+      :main_img, 
+      :thumb_img, 
+      :about_me
+      )
+  end
+
 end

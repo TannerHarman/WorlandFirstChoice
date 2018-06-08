@@ -12,11 +12,21 @@ class ProgramsController < ApplicationController
     @wellness_program = Program.find(params[:id])
     
     respond_to do |format|
-      if @wellness_program.update(params.require(:program).permit(:title, :subtitle, :description, :price))
+      if @wellness_program.update(program_params)
         format.html { redirect_to action: "index", notice: "The Wellness Program has been updated."}
       else
         format.html { render :edit}
       end
     end
+  end
+
+  private 
+  def program_params
+    params.require(:program).permit(
+      :title, 
+      :subtitle, 
+      :description, 
+      :price
+      )
   end
 end
