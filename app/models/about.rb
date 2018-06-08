@@ -4,6 +4,9 @@ class About < ApplicationRecord
 
   validates_presence_of :name, :greeting, :about_me
 
+  mount_uploader :thumb_img, ImageUploader
+  mount_uploader :main_img, ImageUploader
+
   def self.by_position
     order("position ASC")
   end

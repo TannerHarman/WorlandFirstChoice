@@ -10,7 +10,7 @@
           </div>
 
           <div class="col-md-5" align="center">
-            <%= image_tag(@bios.main_img, class: "image") unless @bios.thumb_img.nil? %>
+            <%= image_tag(@bios.main_img.url, class: "image") unless @bios.thumb_img.url.nil? %>
           </div>
         </div>
         </div>

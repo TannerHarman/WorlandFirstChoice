@@ -7,7 +7,7 @@
           <div class="col-lg-4">
             <%= link_to about_me_path(bio) do%>
               <div class="card" data-id="<%= bio.id %>">
-                <%= image_tag(bio.thumb_img, class: "index-image") unless bio.thumb_img.nil? %>
+                <%= image_tag(bio.thumb_img.url, class: "index-image") unless bio.thumb_img.url.nil? %>
                 <div class="card-text">
                   <h3><%=link_to bio.name, about_me_path(bio) %></h3>
                 </div>
