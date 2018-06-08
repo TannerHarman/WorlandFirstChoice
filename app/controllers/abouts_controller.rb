@@ -1,4 +1,5 @@
 class AboutsController < ApplicationController
+  before_action :set_about, only: [:edit, :update, :show, :destroy]
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all, editor: :all
   def index
     @bios = About.by_position
@@ -29,11 +30,9 @@ class AboutsController < ApplicationController
   end
 
   def edit
-    @bios = About.friendly.find(params[:id])
   end
 
   def update
-    @bios = About.friendly.find(params[:id])
 
     respond_to do |format|
       if @bios.update(about_params)
@@ -45,12 +44,9 @@ class AboutsController < ApplicationController
   end
 
   def show
-    @bios = About.friendly.find(params[:id])
   end
 
   def destroy
-    @bios = About.friendly.find(params[:id])
-
     @bios.destroy
     respond_to do |format|
       format.html { redirect_to about_us_path, notice: "Post was Deleted!"}
@@ -67,6 +63,10 @@ class AboutsController < ApplicationController
       :thumb_img, 
       :about_me
       )
+  end
+
+  def set_about
+    @bios = About.friendly.find(params[:id])
   end
 
 end

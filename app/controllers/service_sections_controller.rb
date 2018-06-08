@@ -1,4 +1,5 @@
 class ServiceSectionsController < ApplicationController
+  before_action :set_service_section, only: [:edit, :update, :show, :destroy]
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all, editor: :all
 
   def index
@@ -30,11 +31,9 @@ class ServiceSectionsController < ApplicationController
   end
 
   def edit
-    @section = ServiceSection.friendly.find(params[:id])
   end
 
   def update
-    @section = ServiceSection.friendly.find(params[:id])
 
     respond_to do |format|
       if @section.update(service_section_params)
@@ -46,12 +45,10 @@ class ServiceSectionsController < ApplicationController
   end
 
   def show
-    @section = ServiceSection.friendly.find(params[:id])
     @services = Service.section(ServiceSection.friendly.find(params[:id])).by_position
   end
 
   def destroy
-    @section = ServiceSection.friendly.find(params[:id])
 
     @section.destroy
     respond_to do |format|
@@ -62,5 +59,9 @@ class ServiceSectionsController < ApplicationController
   private 
   def service_section_params
     params.require(:service_section).permit(:title)
+  end
+
+  def set_service_section
+    @section = ServiceSection.friendly.find(params[:id])
   end
 end

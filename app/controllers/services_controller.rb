@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  before_action :set_service, only: [:edit, :update, :show, :destroy]
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all, editor: :all
   def index
     @services = Service.by_position
@@ -29,11 +30,9 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    @service = Service.friendly.find(params[:id])
   end
 
   def update
-    @service = Service.friendly.find(params[:id])
 
     respond_to do |format|
       if @service.update(service_params)
@@ -45,11 +44,9 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service = Service.friendly.find(params[:id])
   end
 
   def destroy
-    @service = Service.friendly.find(params[:id])
 
     @service.destroy
     respond_to do |format|
@@ -64,5 +61,9 @@ class ServicesController < ApplicationController
       :subtitle, 
       :body
       )
+  end
+
+  def set_service
+    @service = Service.friendly.find(params[:id])
   end
 end
