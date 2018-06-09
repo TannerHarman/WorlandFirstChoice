@@ -1,5 +1,7 @@
 class ServiceSection < ApplicationRecord
   validates_presence_of :title
+  
+  mount_uploader :main_img, ImageUploader
 
   extend FriendlyId
   friendly_id :title, use: :slugged

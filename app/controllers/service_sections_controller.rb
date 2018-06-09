@@ -58,7 +58,7 @@ class ServiceSectionsController < ApplicationController
 
   private 
   def service_section_params
-    params.require(:service_section).permit(:title)
+    params.require(:service_section).permit(:title, :main_img)
   end
 
   def set_service_section

@@ -7,7 +7,7 @@
         <%= link_to services_show_path(section) do%>
           <div class="col-lg-4">
             <div class="card" data-id="<%= section.id %>">
-              <%= image_tag(section.main_img, class: "index-image") unless section.main_img.nil? %>
+              <%= image_tag(section.main_img.url, class: "index-image") unless section.main_img.url.nil? %>
               <div class="card-text">
                 <h3><%=link_to section.title, services_show_path(section) %></h3>
               </div>

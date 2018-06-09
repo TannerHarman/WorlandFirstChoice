@@ -4,6 +4,9 @@ class Service < ApplicationRecord
 
   validates_presence_of :title, :subtitle
 
+  mount_uploader :thumb_img, ImageUploader
+  mount_uploader :main_img, ImageUploader
+
   belongs_to :service_section, optional: true
   
  def self.section(id)
