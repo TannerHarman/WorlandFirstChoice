@@ -2,7 +2,7 @@ class About < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  validates_presence_of :name, :greeting, :about_me
+  # validates_presence_of :name, :greeting, :about_me
 
   mount_uploader :thumb_img, ImageUploader
   mount_uploader :main_img, ImageUploader
