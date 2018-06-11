@@ -163,13 +163,14 @@ body {
    max-width: 600px;
  }
 
- .image {
+ .main-img {
+  object-fit: cover;
   max-width: 100%;
   height: auto;
   margin: auto;
  }
 
- .index-image {
+ .thumb-image {
   object-fit: cover;
   width: 100%;
   height: auto;
