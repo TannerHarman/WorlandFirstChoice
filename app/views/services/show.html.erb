@@ -10,7 +10,7 @@
           </div>
 
           <div class="col-md-7">
-            <%= image_tag(@service.main_img.url, class: "image") unless @service.main_img.url.nil?%>
+            <%= image_tag(img(@service.main_img.url, 'main'), class: "main-img")%>
           </div>
         </div>
         </div>

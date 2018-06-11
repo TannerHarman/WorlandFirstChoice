@@ -13,15 +13,7 @@ class Service < ApplicationRecord
   where(service_sections_id: id)
  end
 
-def self.by_position
-  order("position ASC")
-end
-
- after_initialize :set_defauls
-
- def set_defauls
-  self.main_img ||= 'http://via.placeholder.com/600x400'
-  self.thumb_img ||= 'http://via.placeholder.com/350x200'
- end
-
+  def self.by_position
+    order("position ASC")
+  end
 end

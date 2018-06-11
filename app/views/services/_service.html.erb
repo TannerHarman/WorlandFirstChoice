@@ -1,7 +1,7 @@
   <div class="col-lg-3">
     <%= link_to service_show_path(service) do%>
       <div class="card" data-id="<%= service.id %>">
-        <div><%= image_tag(service.thumb_img.url, class: "index-image") unless service.thumb_img.url.nil?  %></div>
+        <div><%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image")%></div>
         <div class="card-text">
           <h3><%=service.title%></h3>
         </div>
