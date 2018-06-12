@@ -1,7 +1,7 @@
 <%= form_for(@section) do |f| %>
   <% if @section.errors.any? %>
     <% @section.errors.full_messages.each do |error| %>
-      <%= js add_gritter(error, title: "Worland Physical Therapy", sticky: false) %>
+      <%= alert_generator(error) %>
     <% end %>
   <% end %>
 
