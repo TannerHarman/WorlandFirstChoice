@@ -2,7 +2,7 @@ class Service < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  validates_presence_of :title, :subtitle
+  validates_presence_of :title, :subtitle, :service_sections_id
 
   mount_uploader :thumb_img, ImageUploader
   mount_uploader :main_img, ImageUploader

@@ -61,7 +61,8 @@ class ServicesController < ApplicationController
       :subtitle,
       :main_img,
       :thumb_img,
-      :body
+      :body,
+      :service_sections_id
       )
   end
 
