@@ -1,14 +1,8 @@
 <%= form_for(@section) do |f| %>
   <% if @section.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@section.errors.count, "error") %> prohibited the Creation of New Therapist</h2>
-
-      <ul>
-      <% @section.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <% @section.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, title: "Worland Physical Therapy", sticky: false) %>
+    <% end %>
   <% end %>
 
   <div class="form-group">

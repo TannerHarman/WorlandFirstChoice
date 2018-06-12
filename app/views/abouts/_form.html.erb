@@ -1,15 +1,8 @@
   <%= form_for(@bios) do |f| %>
-
     <% if @bios.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@bios.errors.count, "error") %> prohibited the Creation of New Therapist</h2>
-
-        <ul>
-        <% @bios.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
+      <% @bios.errors.full_messages.each do |error| %>
+        <%= js add_gritter(error, title: "Worland Physical Therapy", sticky: false) %>
+      <% end %>
     <% end %>
 
     <div class="form-group">
