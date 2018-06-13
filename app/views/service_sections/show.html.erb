@@ -6,7 +6,7 @@
     <div class="row">
         <% @services.each do |service| %>
           <div class="col-md-6">
-            <% if service.body? %>
+            <% if service.body? || logged_in?(:site_admin, :editor)%>
               <%= link_to service_show_path(service) do%>
                 <div class="card" data-id="<%= service.id %>">
                   <div><%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image")%></div>
