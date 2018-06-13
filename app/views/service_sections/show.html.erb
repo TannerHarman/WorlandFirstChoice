@@ -6,13 +6,22 @@
     <div class="row">
         <% @services.each do |service| %>
           <div class="col-md-6">
-            <%= link_to service_show_path(service) do%>
-              <div class="card">
-                <%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image") %>
-                <div class="card-text">
-                  <h3><%= link_to service.title, service_show_path(service) %></h3>
+            <% if service.body? %>
+              <%= link_to service_show_path(service) do%>
+                <div class="card" data-id="<%= service.id %>">
+                  <div><%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image")%></div>
+                  <div class="card-text">
+                    <h3><%=service.title%></h3>
+                  </div>
                 </div>
-              </div>
+              <% end %>
+            <% else %>
+              <div class="card" data-id="<%= service.id %>">
+                  <div><%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image")%></div>
+                  <div class="card-text">
+                    <h3><%=service.title%></h3>
+                  </div>
+                </div>
             <% end %>
           </div>
         <% end %>
