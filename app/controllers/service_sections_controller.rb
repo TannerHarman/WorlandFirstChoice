@@ -45,7 +45,7 @@ class ServiceSectionsController < ApplicationController
   end
 
   def show
-    @services = Service.section(ServiceSection.friendly.find(params[:id])).by_position
+    @services = Service.section(set_service_section).by_position
   end
 
   def destroy

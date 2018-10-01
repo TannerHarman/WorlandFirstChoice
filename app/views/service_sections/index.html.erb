@@ -5,7 +5,7 @@
     <div class="row <%= "sortable" if logged_in?(:site_admin, :editor)%>">
       <% @section.each do |section| %>
         <%= link_to services_show_path(section) do%>
-          <div class="col-lg-4">
+          <div class="col-lg-4 services">
             <div class="card" data-id="<%= section.id %>">
               <%= image_tag(img(section.main_img.url, 'thumb'), class: "thumb-image")%>
               <div class="card-text">
