@@ -1,4 +1,4 @@
-  <div class="col-lg-3">
+  <div class="col-lg-4">
     <% if service.body? || logged_in?(:site_admin, :editor) %>
       <%= link_to service_show_path(service) do%>
         <div class="card" data-id="<%= service.id %>">
