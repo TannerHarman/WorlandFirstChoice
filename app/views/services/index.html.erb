@@ -1,12 +1,9 @@
 <h1>Services Page</h1>
-<div class="album card-text">
-  <div class="container">
-      <div class="row <%= "sortable" if logged_in?(:site_admin, :editor)%>">
-        <%= render @services %>
-      </div>
-  </div>
-</div> 
 
+<div <%= "sortable" if logged_in?(:site_admin, :editor)%>">
+  <%= render @services %>
+</div>
+      
 <% if logged_in?(:site_admin, :editor) %>
   <%= link_to service_new_path do%>
     <div class="icons">

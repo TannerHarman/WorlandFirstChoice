@@ -43,8 +43,6 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
-    autoprefixer-rails (8.5.2)
-      execjs
     aws-partitions (1.53.0)
     aws-sdk-core (3.13.1)
       aws-partitions (~> 1.0)
@@ -62,10 +60,6 @@ GEM
     bindex (0.5.0)
     bootsnap (1.3.0)
       msgpack (~> 1.0)
-    bootstrap (4.1.1)
-      autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.9, < 2)
-      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.2)
     carrierwave (1.2.2)
@@ -145,7 +139,6 @@ GEM
     petergate (1.8.1)
       activerecord (> 4.0.0)
     pg (1.0.0)
-    popper_js (1.12.9)
     puma (3.11.4)
     rack (2.0.5)
     rack-test (1.0.0)
@@ -231,7 +224,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
-  bootstrap (~> 4.1, >= 4.1.1)
   byebug
   carrierwave (~> 1.2, >= 1.2.2)
   carrierwave-aws (~> 1.3)
@@ -262,4 +254,4 @@ RUBY VERSION
    ruby 2.4.2p198
 
 BUNDLED WITH
-   1.16.2
+   1.17.0.pre.2

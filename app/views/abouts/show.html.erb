@@ -1,23 +1,10 @@
-<div class="container">
-  <div class="show">
-    <div class="card">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-5">
-            <h2><%= @bios.name %></h2>
-            <em><%= @bios.greeting %></em>
-            <p class="card-text"><%= @bios.about_me%></p>
-          </div>
+<h2><%= @bios.name %></h2>
+<em><%= @bios.greeting %></em>
+<p><%= @bios.about_me%></p>
 
-          <div class="col-md-7" align="center">
-            <%= image_tag(img(@bios.main_img.url, 'main'), class: "main-img") %>
-          </div>
-        </div>
-        </div>
-      </div>
-      <div class="icons">
-        <%= link_to "#{fa_icon 'edit'}".html_safe, about_edit_path(@bios) if logged_in?(:site_admin, :editor) %>
-        <%= link_to "#{fa_icon 'trash'}".html_safe, about_path(@bios), method: :delete, data: { confirm: "Are you sure you want to delete '#{@bios.name}'"} if logged_in?(:site_admin, :editor) %>
-      </div>
-  </div>
-</div>
+
+<%= image_tag(img(@bios.main_img.url, 'main'), class: "main-img") %>
+
+
+<%= link_to "#{fa_icon 'edit'}".html_safe, about_edit_path(@bios) if logged_in?(:site_admin, :editor) %>
+<%= link_to "#{fa_icon 'trash'}".html_safe, about_path(@bios), method: :delete, data: { confirm: "Are you sure you want to delete '#{@bios.name}'"} if logged_in?(:site_admin, :editor) %>

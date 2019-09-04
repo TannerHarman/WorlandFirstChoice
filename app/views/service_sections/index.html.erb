@@ -1,33 +1,28 @@
 <h1>Service Section Index Page</h1>
 
-<div class="album card-text">
-  <div class="container">
-    <div class="row <%= "sortable" if logged_in?(:site_admin, :editor)%>">
-      <% @section.each do |section| %>
-        <%= link_to services_show_path(section) do%>
-          <div class="col-lg-4 services">
-            <div class="card" data-id="<%= section.id %>">
-              <%= image_tag(img(section.main_img.url, 'thumb'), class: "thumb-image")%>
-              <div class="card-text">
-                <h3><%=link_to section.title, services_show_path(section) %></h3>
-              </div>
-            </div>
-            <div class="icons white-text">
-                <%= link_to "#{fa_icon 'edit'}".html_safe, edit_service_section_path(section) if logged_in?(:site_admin, :editor)%>
-                <%= link_to "#{fa_icon 'trash'}".html_safe, service_section_path(section), method: :delete, data: { confirm: "Are you sure you want to delete '#{section.title}'"} if logged_in?(:site_admin, :editor)%>
-              </div>
+<div class="row <%= "sortable" if logged_in?(:site_admin, :editor)%>">
+  <% @section.each do |section| %>
+    <%= link_to services_show_path(section) do%>
+
+        <div data-id="<%= section.id %>">
+          <%= image_tag(img(section.main_img.url, 'thumb'), class: "thumb-image")%>
+
+            <h3><%=link_to section.title, services_show_path(section) %></h3>
+        </div>
+        
+        <div>
+            <%= link_to "#{fa_icon 'edit'}".html_safe, edit_service_section_path(section) if logged_in?(:site_admin, :editor)%>
+            <%= link_to "#{fa_icon 'trash'}".html_safe, service_section_path(section), method: :delete, data: { confirm: "Are you sure you want to delete '#{section.title}'"} if logged_in?(:site_admin, :editor)%>
           </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</div> 
+    <% end %>
+  <% end %>
+</div>
 
 <% if logged_in?(:site_admin, :editor) %>
   <%= link_to new_about_path do%>
     <div class="icons">
-    <%= link_to "See All Services", service_index_path%> |
-      <%= link_to new_service_section_path do%>
+      <%= link_to "See All Services", service_index_path%> |
+        <%= link_to new_service_section_path do%>
         <span>Add Service Category <%= fa_icon 'plus' %></span>
       <% end %>
     </div>

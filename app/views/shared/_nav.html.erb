@@ -1,17 +1,11 @@
-<header class="masthead mb-auto">
-  <div class="inner">
-    <h3 class="masthead-brand"><%= link_to "Home", root_path%></h3>
-    <nav class="navbar navbar-expand-sm navbar-dark nav-masthead justify-content-center">
-    <button class="navbar-toggler navbar-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <%= link_to "Meet Our Therapists", about_us_path, class: "nav-link" %>
-        <%= link_to "Services", services_index_path, class: "nav-link" %>
-        <%= link_to "Wellness Program", wellness_index_path, class: "nav-link" %>
-        <%= link_to "Contact Us", contact_index_path, class: "nav-link" %>
-        <%= login_helper("nav-link") %>
-      </div>
-    </nav>
-  </div>
+<header>
+  <h3 class="masthead-brand"><%= link_to "Home", root_path%></h3>
+
+  <nav>
+    <%= link_to "Meet Our Therapists", about_us_path %>
+    <%= link_to "Services", services_index_path %>
+    <%= link_to "Wellness Program", wellness_index_path %>
+    <%= link_to "Contact Us", contact_index_path %>
+    <%= login_helper("nav-link") %>
+  </nav>
 </header>

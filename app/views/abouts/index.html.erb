@@ -1,27 +1,21 @@
 <h1>Our Therapists</h1>
 
-<div class="album card-text">
-  <div class="container">
-    <div class="row <%= "sortable" if logged_in?(:site_admin, :editor) %>">
-        <% @bios.each do |bio| %>
-          <div class="col-lg-4">
-            <%= link_to about_me_path(bio) do%>
-              <div class="card" data-id="<%= bio.id %>">
-                <%= image_tag(img(bio.thumb_img.url, 'thumb'), class: "thumb-image") %>
-                <div class="card-text">
-                  <h3><%=link_to bio.name, about_me_path(bio) %></h3>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-  </div>
-</div> 
+<div <%= "sortable" if logged_in?(:site_admin, :editor) %>">
+  <% @bios.each do |bio| %>
 
+  <%= link_to about_me_path(bio) do%>
+  <div data-id="<%= bio.id %>">
+    <%= image_tag(img(bio.thumb_img.url, 'thumb'), class: "thumb-image") %>
+
+    <h3><%=link_to bio.name, about_me_path(bio) %></h3>
+  </div>
+  <% end %>
+
+  <% end %>
+</div>
 <% if logged_in?(:site_admin, :editor) %>
   <%= link_to new_about_path do%>
-    <div class="icons">
+    <div>
       <p>Add Therapist <%= fa_icon 'plus' %></p>
     </div>
   <% end %>

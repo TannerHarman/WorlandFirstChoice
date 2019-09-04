@@ -1,19 +1,15 @@
-  <div class="col-lg-4">
-    <% if service.body? || logged_in?(:site_admin, :editor) %>
-      <%= link_to service_show_path(service) do%>
-        <div class="card" data-id="<%= service.id %>">
-          <div><%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image")%></div>
-          <div class="card-text">
-            <h3><%=service.title%></h3>
-          </div>
-        </div>
-      <% end %>
-    <% else %>
-      <div class="card" data-id="<%= service.id %>">
-          <div><%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image")%></div>
-          <div class="card-text">
-            <h3><%=service.title%></h3>
-          </div>
-        </div>
-    <% end %>
+<% if service.body? || logged_in?(:site_admin, :editor) %>
+  <%= link_to service_show_path(service) do%>
+    <div data-id="<%= service.id %>">
+      <%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image")%>
+    <div>
+        <h3><%=service.title%></h3>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div data-id="<%= service.id %>">
+    <%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image")%>
+    <h3><%=service.title%></h3>
   </div>
+<% end %>
