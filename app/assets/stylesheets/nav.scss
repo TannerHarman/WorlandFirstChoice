@@ -1,0 +1,18 @@
+header {
+  place-self: stretch;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1800px;
+  margin: auto;
+}
+
+nav {
+  display: flex;
+}
+
+nav *  {
+  margin: 10px;
+}

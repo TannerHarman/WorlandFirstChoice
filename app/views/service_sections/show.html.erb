@@ -1,22 +1,23 @@
 <h1><%= @section.title %></h1>
+<div class='items-wrapper'>
 <% @services.each do |service| %>
-
 <% if service.body? || logged_in?(:site_admin, :editor)%>
   <%= link_to service_show_path(service) do%>
-    <div data-id="<%= service.id %>">
+    <div class='item' data-id="<%= service.id %>">
       <%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image")%>
       <h3><%=service.title%></h3>
     </div>
   <% end %>
 
 <% else %>
-  <div data-id="<%= service.id %>">
+  <div class='item' data-id="<%= service.id %>">
     <%= image_tag(img(service.thumb_img.url, 'thumb'), class: "thumb-image")%>
     <h3><%=service.title%></h3>
   </div>
 <% end %>
 
 <% end %>
+</div>
 
 <% if logged_in?(:site_admin, :editor) %>
   <%= link_to service_new_path do%>

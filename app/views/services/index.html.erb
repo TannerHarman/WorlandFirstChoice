@@ -1,11 +1,12 @@
 <h1>Services Page</h1>
 
-<div <%= "sortable" if logged_in?(:site_admin, :editor)%>">
+<div class="items-wrapper <%= "sortable" if logged_in?(:site_admin, :editor)%>">
   <%= render @services %>
 </div>
       
 <% if logged_in?(:site_admin, :editor) %>
   <%= link_to service_new_path do%>
+
     <div class="icons">
       <p>Add Service <%= fa_icon 'plus' %></p>
     </div>

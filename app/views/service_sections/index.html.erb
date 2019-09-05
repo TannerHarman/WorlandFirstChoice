@@ -1,10 +1,10 @@
 <h1>Service Section Index Page</h1>
 
-<div class="row <%= "sortable" if logged_in?(:site_admin, :editor)%>">
+<div class="items-wrapper <%= "sortable" if logged_in?(:site_admin, :editor)%>">
   <% @section.each do |section| %>
     <%= link_to services_show_path(section) do%>
 
-        <div data-id="<%= section.id %>">
+        <div class='item' data-id="<%= section.id %>">
           <%= image_tag(img(section.main_img.url, 'thumb'), class: "thumb-image")%>
 
             <h3><%=link_to section.title, services_show_path(section) %></h3>

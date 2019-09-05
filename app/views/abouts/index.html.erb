@@ -1,18 +1,19 @@
 <h1>Our Therapists</h1>
 
-<div <%= "sortable" if logged_in?(:site_admin, :editor) %>">
-  <% @bios.each do |bio| %>
+  <section class="items-wrapper <%= "sortable" if logged_in?(:site_admin, :editor) %>">
+    <% @bios.each do |bio| %>
 
-  <%= link_to about_me_path(bio) do%>
-  <div data-id="<%= bio.id %>">
-    <%= image_tag(img(bio.thumb_img.url, 'thumb'), class: "thumb-image") %>
+    <%= link_to about_me_path(bio) do%>
+    <div class='item' data-id="<%= bio.id %>">
+      <%= image_tag(img(bio.thumb_img.url, 'thumb'), class: "thumb-image") %>
 
-    <h3><%=link_to bio.name, about_me_path(bio) %></h3>
-  </div>
-  <% end %>
+      <h3><%=link_to bio.name, about_me_path(bio)%></h3>
+    </div>
+    <% end %>
 
-  <% end %>
-</div>
+    <% end %>
+  </section>
+
 <% if logged_in?(:site_admin, :editor) %>
   <%= link_to new_about_path do%>
     <div>
