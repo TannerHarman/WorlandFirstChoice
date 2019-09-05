@@ -16,6 +16,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-rows: minmax(75px, auto) 1fr minmax(75px, auto);
+  overflow: hidden;
 }
 
 main {
@@ -23,7 +24,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
 }
 
 main .hero {
