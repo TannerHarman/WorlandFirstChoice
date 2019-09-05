@@ -58,21 +58,21 @@ ul li:nth-child(2) span {
   background: url('Back-to-Play.png') no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  animation-delay: 5s;
+  animation-delay: 6s;
 }
 
 ul li:nth-child(3) span {
   background: url('Back-to-Work.png') no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  animation-delay: 10s;
+  animation-delay: 12s;
 }
 
 ul li:nth-child(4) span {
   background: url('Back-to-Life.png') no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  animation-delay: 15s;
+  animation-delay: 18s;
 }
 
 .cb-slideshow li h1 { 
@@ -87,13 +87,13 @@ ul li:nth-child(4) span {
   animation: titleAnimation 24s linear infinite 0s; 
 }
 .cb-slideshow li:nth-child(2) h1 { 
-  animation-delay: 5s; 
+  animation-delay: 6s; 
 }
 .cb-slideshow li:nth-child(3) h1 { 
-  animation-delay: 10s; 
+  animation-delay: 12s; 
 }
 .cb-slideshow li:nth-child(4) h1 { 
-  animation-delay: 15s; 
+  animation-delay: 18s; 
 }
 
 @keyframes imageAnimation { 
