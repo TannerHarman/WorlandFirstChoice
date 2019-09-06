@@ -10,6 +10,7 @@ header {
 
   position: fixed;
   z-index: 2;
+  background-color:white;
 }
 
 nav {
@@ -21,7 +22,7 @@ nav *  {
 }
 
 nav a {
-  color: white;
+  color: black;
   text-decoration: none;
   font-weight: bold;
   padding-bottom: 5px;
@@ -56,6 +57,7 @@ nav a:hover {
     transform: translateY(200px);
     background: #FF6D3D;
     z-index: -1;
+    display: none;
 
     transition: 150ms transform;
   }

@@ -2,9 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+nav a {
+  color: white;
+}
+
 body {
   background-color: black;
   z-index: -10;
+}
+
+header {
+  background-color: transparent;
+}
+
+main {
+  margin-top: 0px;
 }
 
 .cb-slideshow {
