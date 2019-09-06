@@ -27,7 +27,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 54px;
+  margin-top: 65px;
 }
 
 .items-wrapper {
@@ -35,16 +35,20 @@ main {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  text-decoration: none;
 }
 
 .item {
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+  align-items: center;
   text-align: center;
   margin: 3vw;
   filter: drop-shadow(0px 10px 5px rgba(0,0,0, .15));
-  
+}
+
+.items-wrapper a {
+  text-decoration: none;
 }
 
 .item img {
@@ -58,10 +62,14 @@ main {
   margin: 20px 10px -20px;
 }
 
-.item a:last-child {
-  width: 100%;
+.items-wrapper h3,
+.items-wrapper a {
   text-decoration: none;
   color: black;
+}
+
+.item h3 {
+  text-decoration: none;
   border: 1px dashed black;
   background-color: #FF6D3D;
   padding: 5px 10px;
