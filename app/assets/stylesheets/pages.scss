@@ -13,15 +13,16 @@ body {
   color: white;
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 li {
   list-style: none;
-  position: absolute;
   width: 100%;
   height: 100%;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,6 +54,7 @@ ul h1{
   align-items: center;
   animation: imageAnimation 32s linear infinite 0s;
   opacity: 0;
+  margin-bottom: 50px;
 }
 
 .hero {
@@ -120,13 +122,13 @@ footer {
 
 main a {
   z-index: 2;
-  margin-bottom: 20vh;
   background: #FF6D3D;
   padding: 15px 20px;
   text-decoration: none;
   color: white;
   font-weight: bolder;
   border-radius: 5px;
+  margin-top: 65vh;
 }
 
 main a:hover {
