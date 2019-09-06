@@ -9,7 +9,7 @@ header {
   margin: auto;
 
   position: fixed;
-  z-index: 1000;
+  z-index: 2;
 }
 
 nav {
@@ -62,6 +62,7 @@ nav a:hover {
 
   .show {
     transform: translateY(0px);
+    z-index: 3;
   }
 
   nav a {

@@ -61,6 +61,7 @@ main {
 
 @media screen and (max-width: 750px) {
   body {
-    min-height: calc(100vh - 54px);
+    // min-height: calc(100vh - 54px);
+    padding-bottom: 54px;
   }
 }
