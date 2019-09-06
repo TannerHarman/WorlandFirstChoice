@@ -1,5 +1,8 @@
 <header>
-  <%= link_to image_tag('logo.png'), root_path%>
+  <div class="bar">
+    <%= link_to image_tag('logo.png'), root_path%>
+    <%= fa_icon 'bars', class:"mobile-menu"%>
+  </div>
 
   <nav>
     <%= link_to "Meet Our Therapists", about_us_path %>

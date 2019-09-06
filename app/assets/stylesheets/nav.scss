@@ -7,6 +7,9 @@ header {
   align-items: center;
   max-width: 1800px;
   margin: auto;
+
+  position: fixed;
+  z-index: 1000;
 }
 
 nav {
@@ -15,4 +18,89 @@ nav {
 
 nav *  {
   margin: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  color: #FF7740;
+  border-bottom: 2px solid #E17B59;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  header,
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  header {
+    top: none;
+    bottom: 0;
+    flex-direction: column-reverse;
+  }
+
+  nav {
+    transform: translateY(164px);
+    background: #FF6D3D;
+    z-index: -1;
+
+    transition: 150ms transform;
+  }
+
+  .show {
+    transform: translateY(0px);
+  }
+
+  nav a {
+    margin: 0;
+    border-bottom: 1px solid #883F28;
+    padding: 10px 0px;
+    height: 100%;
+    width: 100%;
+  }
+  
+  nav a:hover,
+  .bar .mobile-menu:hover,
+  .bar a:hover {
+    color: black;
+    background: white;
+    border: none;
+  }
+
+  header .bar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    place-items: center;
+    background: #FF6D3D;
+  }
+
+  .bar a {
+    width: 100%;
+  }
+
+  .bar a img {
+    margin-right: -46px;
+  }
+  
+  .bar .mobile-menu {
+    display: block;
+    font-size: 30px;
+    padding: 10px;
+    margin: 0px;
+    height: 100%;
+  }
 }

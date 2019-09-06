@@ -19,7 +19,7 @@ body {
   min-height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-rows: minmax(75px, auto) 1fr minmax(75px, auto);
+  grid-template-rows: 1fr minmax(75px, auto);
 }
 
 main {
@@ -57,4 +57,10 @@ main {
 .item a {
   text-decoration: none;
   color: black;
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    min-height: calc(100vh - 54px);
+  }
 }
