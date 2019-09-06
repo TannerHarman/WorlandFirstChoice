@@ -2,17 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+header {
+  background-color: transparent;
+  box-shadow: 0 0 0 0 transparent;
+}
+
 nav a {
   color: white;
+}
+
+nav a:hover {
+  color: #FF7740;
+  border-bottom: 2px solid #E17B59;
 }
 
 body {
   background-color: black;
   z-index: -10;
-}
-
-header {
-  background-color: transparent;
 }
 
 main {

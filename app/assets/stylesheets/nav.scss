@@ -31,8 +31,8 @@ nav a {
 }
 
 nav a:hover {
-  color: #FF7740;
-  border-bottom: 2px solid #E17B59;
+  color: white;
+  border-bottom: 2px solid white;
 }
 
 .mobile-menu {
@@ -55,17 +55,16 @@ nav a:hover {
   }
 
   nav {
-    transform: translateY(200px);
     background: #FF6D3D;
     z-index: -1;
-    display: none;
+    transform: translateY(200px);
 
     transition: 150ms transform;
   }
 
   .show {
-    transform: translateY(0px);
     z-index: 3;
+    transform: translateY(0px);
   }
 
   nav a {
