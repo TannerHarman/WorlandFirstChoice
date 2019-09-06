@@ -34,7 +34,7 @@ ul li span {
   z-index: -1;
   opacity: 0;
   animation: imageAnimation 32s linear infinite 0s;
-  background: url('/assets/clinic.jpg') no-repeat;
+  background: url('../assets/clinic.jpg') no-repeat;
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -71,21 +71,21 @@ ul::after {
 }
 
 ul li:nth-child(2) span {
-  background: url('/assets/Back-to-Play.png') no-repeat;
+  background: url('../assets/Back-to-Play.png') no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   animation-delay: 8s;
 }
 
 ul li:nth-child(3) span {
-  background: url('/assets/Back-to-Work.png') no-repeat;
+  background: url('../assets/Back-to-Work.png') no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   animation-delay: 16s;
 }
 
 ul li:nth-child(4) span {
-  background: url('/assets/Back-to-Life.png') no-repeat;
+  background: url('../assets/Back-to-Life.png') no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   animation-delay: 24s;
