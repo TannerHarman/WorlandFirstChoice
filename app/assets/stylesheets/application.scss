@@ -18,8 +18,8 @@ p {
 body {
   min-height: 100vh;
   width: 100%;
-  display: grid;
-  grid-template-rows: 1fr minmax(75px, auto);
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -28,6 +28,7 @@ main {
   justify-content: center;
   align-items: center;
   margin-top: 65px;
+  flex: 1;
 }
 
 .items-wrapper {
