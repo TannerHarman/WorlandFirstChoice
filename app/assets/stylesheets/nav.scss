@@ -58,13 +58,13 @@ nav a:hover {
   nav {
     position: relative;
     background: #FF6D3D;
-    margin-bottom: -260px;
+    margin-bottom: -250px;
     transition: 150ms transform;
     z-index: -1;
   }
 
   .show {
-    transform: translateY(-259px);
+    transform: translateY(-250px);
   }
 
   nav a {
