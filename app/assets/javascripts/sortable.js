@@ -1,3 +1,15 @@
+let urlPath = () => {
+  let path = `${window.location.pathname}`;
+
+  if (path == '/services') {
+    return '/service_sections/sort';
+  } else if (path == '/all-services') {
+    return '/services/sort';
+  }  else {
+    return '/abouts/sort'
+  } 
+}
+
 (function() {
   var ready, set_positions;
 
@@ -26,7 +38,7 @@
       });
       $.ajax({
         type: 'PUT',
-        url: '/abouts/sort',
+        url: urlPath(),
         data: {
           order: updated_order
         }
@@ -37,3 +49,4 @@
   $(document).ready(ready);
 
 }).call(this);
+
