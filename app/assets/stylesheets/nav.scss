@@ -52,6 +52,7 @@ nav a:hover {
     top: none;
     bottom: 0;
     flex-direction: column-reverse;
+    background-color: transparent;
   }
 
   nav {
@@ -63,7 +64,6 @@ nav a:hover {
   }
 
   .show {
-    z-index: 3;
     transform: translateY(0px);
   }
 
@@ -73,7 +73,6 @@ nav a:hover {
     padding: 10px 0px;
     height: 100%;
     width: 100%;
-    
   }
   
   nav a:hover,

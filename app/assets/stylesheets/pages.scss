@@ -147,6 +147,13 @@ main a {
   font-weight: bolder;
   border-radius: 5px;
   margin-top: 65vh;
+
+  transition: z-index;
+  transition-delay: 50ms;
+}
+
+.behind {
+  z-index:-1;
 }
 
 main a:hover {
