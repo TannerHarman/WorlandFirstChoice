@@ -1,20 +1,22 @@
-<h2>
-  <%= @service.title %>
-</h2>
+<section class='display-card'>
+  <div class="info">
 
-<em>
-  <%= @service.subtitle %>
-</em>
+    <h4><%= @service.subtitle %></h4>
 
-<p>
-  <%= @service.body %>
-</p>
+    <p>
+      <%= @service.body %>
+    </p>
+  </div>
+
+    <div class="img">
+      <%= image_tag(img(@service.main_img.url, 'main'), class: "main-img")%>
+      <h2><%= @service.title %></h2>
+  </div>
+</section>
 
 
 
-<%= image_tag(img(@service.main_img.url, 'main'), class: "main-img")%>
-
-<div class="icons">
-  <%= link_to "#{fa_icon 'edit'}".html_safe, service_edit_path(@service) if logged_in?(:site_admin, :editor) %>
-  <%= link_to "#{fa_icon 'trash'}".html_safe, service_path(@service), method: :delete, data: { confirm: "Are you sure you want to delete '#{@service.title}'"} if logged_in?(:site_admin, :editor) %>
-</div>
+      <div class="icons">
+      <%= link_to "#{fa_icon 'edit'}".html_safe, service_edit_path(@service) if logged_in?(:site_admin, :editor) %>
+      <%= link_to "#{fa_icon 'trash'}".html_safe, service_path(@service), method: :delete, data: { confirm: "Are you sure you want to delete '#{@service.title}'"} if logged_in?(:site_admin, :editor) %>
+    </div>
