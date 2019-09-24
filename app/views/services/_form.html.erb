@@ -1,54 +1,55 @@
-<%= form_for(@service) do |f| %>
-  <% if @service.errors.any? %>
-    <% @service.errors.full_messages.each do |error| %>
-      <%= alert_generator(error) %>
+ <div class="display-card form">
+  <%= form_for(@service) do |f| %>
+    <% if @service.errors.any? %>
+      <% @service.errors.full_messages.each do |error| %>
+        <%= alert_generator(error) %>
     <% end %>
   <% end %>
 
-    <div class="display-card form">
-    <section>
-      <div>
-        <%= f.label :title %>
-        <%= f.text_field :title, class: 'form-control' %>
-      </div>
 
-      <div>
-        <%= f.label :subtitle %>
-        <%= f.text_field :subtitle, class: 'form-control' %>
-      </div>
+  <section>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
 
-      <div>
-        <%= f.label :service_sections_id %>
-        <%= f.collection_select(:service_sections_id, ServiceSection.all, :id, :title,
-                                {
-                                  selected: @service.service_sections_id,
-                                  include_blank: true
-                                })
-        %>
-      </div>
+    <div>
+      <%= f.label :subtitle %>
+      <%= f.text_field :subtitle, class: 'form-control' %>
+    </div>
 
-      <div>
-        <label class='btn'>
-          Upload your Main Image <%= f.file_field :main_img, style: 'display:none;' %>
-        </label>
-      </div>
+    <div>
+      <%= f.label :service_sections_id %>
+      <%= f.collection_select(:service_sections_id, ServiceSection.all, :id, :title,
+                              {
+                                selected: @service.service_sections_id,
+                                include_blank: true
+                              })
+      %>
+    </div>
 
-      <div>
-        <label class='btn'>
-          Upload your Thumb Image <%= f.file_field :thumb_img, style: 'display:none;' %>
-        </label>
-      </div>
+    <div>
+      <label class='btn'>
+        Upload your Main Image <%= f.file_field :main_img, style: 'display:none;' %>
+      </label>
+    </div>
 
-      </section>
-    
-      <section class='body'>
+    <div>
+      <label class='btn'>
+        Upload your Thumb Image <%= f.file_field :thumb_img, style: 'display:none;' %>
+      </label>
+    </div>
 
-      <div class='body'>
-        <%= f.label :body %>
-        <%= f.text_area :body, class:'body' %>
-      </div>
+    </section>
+  
+    <section class='body'>
 
-      </section>
+    <div class='body'>
+      <%= f.label :body %>
+      <%= f.text_area :body, class:'body' %>
+    </div>
+
+    </section>
  </div>
 
        <div class='submit'>

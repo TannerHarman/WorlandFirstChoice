@@ -1,12 +1,12 @@
-<%= form_for(@section) do |f| %>
-  <% if @section.errors.any? %>
-    <% @section.errors.full_messages.each do |error| %>
-      <%= alert_generator(error) %>
+<div class="display-card form">
+  <%= form_for(@section) do |f| %>
+    <% if @section.errors.any? %>
+      <% @section.errors.full_messages.each do |error| %>
+        <%= alert_generator(error) %>
+      <% end %>
     <% end %>
-  <% end %>
-  <div class="display-card form">
     <section>
-    <div>
+      <div>
         <%= f.label :title %>
         <%= f.text_field :title, class: 'form-control' %>
       </div>
@@ -17,7 +17,7 @@
         </label>
       </div>
     </section>
-  </div>
+</div>
     <div class='submit'>
       <%= f.submit 'Save Service Category'%>
     </div>
