@@ -1,22 +1,23 @@
-<% @wellness_program.each do |wellness| %>
-  <h2>
-    <%= wellness.title %>
-  </h2>
+ <%= stylesheet_link_tag params[:controller] %>
 
-  <p>
-    <%= wellness.subtitle %>
-  </p>
+<section class="display-card">
+  <% @wellness_program.each do |wellness| %>
 
-  <p>
-    <%= wellness.description %>
-  </p>
+  <div class='title'>
+    <h2><%= wellness.title %></h2>
 
-  <p>
-    <%= number_to_currency(wellness.price) %>
-  </p>
+    <p><%= wellness.subtitle %></p>
+  </div>
+
+  <div class='content'>
+    <p><%= wellness.description %></p>
+
+    <p><%= number_to_currency(wellness.price) %></p>
+  </div>
+</section>
 
   <div class="icons">
     <%= link_to "#{fa_icon 'edit'}".html_safe, edit_wellness_path(wellness) if logged_in?(:site_admin, :editor) %>
   </div>
 
-<% end %>
+ <% end %>

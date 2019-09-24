@@ -1,3 +1,4 @@
+<div class="display-card form">
   <%= form_for(@bios) do |f| %>
     <% if @bios.errors.any? %>
       <% @bios.errors.full_messages.each do |error| %>
@@ -5,35 +6,41 @@
       <% end %>
     <% end %>
 
+  <section>
     <div>
       <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.text_field :name %>
     </div>
 
     <div>
       <%= f.label :greeting %>
-      <%= f.text_field :greeting, class: 'form-control' %>
+      <%= f.text_field :greeting %>
     </div>
 
     <div>
-      <label class='btn btn-info btn-sm'>
+      <label class='btn'>
         Upload your Main Image <%= f.file_field :main_img, style: 'display:none;' %>
       </label>
     </div>
 
     <div>
-      <label class='btn btn-info btn-sm'>
+      <label class='btn'>
         Upload your Thumb Image <%= f.file_field :thumb_img, style: 'display:none;' %>
       </label>
     </div>
+  </section>
 
+  <section>
     <div>
       <%= f.label :about_me %>
-      <%= f.text_area :about_me, class: 'form-control', rows: 15 %>
+      <%= f.text_area :about_me, rows: 15 %>
     </div>
+  </section>
+
+</div>
 
     <div>
-      <%= f.submit 'Save Therapist', class: 'btn btn-primary'%>
+      <%= f.submit 'Save Therapist'%>
     </div>
 
-  <% end %>
+      <% end %>

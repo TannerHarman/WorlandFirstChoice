@@ -117,7 +117,62 @@ main {
   text-align: right;
 }
 
-@media screen and (max-width: 750px) {
+.form {
+  min-height: auto;
+}
+
+.form form {
+  display: flex;
+  flex-direction: row;
+  padding: 30px 20px;
+  justify-content: space-between;
+}
+
+.form section  {
+  width: 300px;
+  margin: 0 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form section div {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form section div * {
+  margin-bottom: 2;
+}
+
+.form div .btn {
+  background-color: black;
+  color: white; 
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.form > div {
+  flex-basis: 1;
+}
+
+.check {
+  display: block;
+  position: relative;
+}
+
+.check input {
+  display: flex;
+  position: absolute;
+  left: 125px;
+  top: 50%;
+  transform: translateY(-40%);
+}
+
+@media screen and (max-width: 800px) {
   body {
     padding-bottom: 54px;
   }
@@ -129,5 +184,17 @@ main {
 
   .display-card * {
     margin: 10px 0;
+  }
+
+  .display-card > .img {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column-reverse;
+  }
+
+  .display-card img {
+    align-self: center;
   }
 }

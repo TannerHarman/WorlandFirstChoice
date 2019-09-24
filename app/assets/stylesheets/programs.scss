@@ -1,3 +1,17 @@
 // Place all the styles related to the Programs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.display-card {
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.title h2{
+  margin-bottom: 10px;
+}
+
+.content p:nth-child(2){
+  text-align: center;
+  margin-top: 10px;
+}
