@@ -1,48 +1,52 @@
 <div>
   <h2>Edit Contact Information</h2>
 
-  <%= form_for(@contact) do |f| %>
+  <div class="display-card form">
+    <%= form_for(@contact) do |f| %>
 
-    <% if @contact.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@contact.errors.count, "error") %> prevented your contact Information from being updated.</h2>
+      <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@contact.errors.count, "error") %> prevented your contact Information from being updated.</h2>
 
-        <ul>
-        <% @contact.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+          <ul>
+          <% @contact.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
+      <section>
+            <div>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
       </div>
+
+      <div>
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number, class: 'form-control' %>
+      </div>
+
+      <div>
+        <%= f.label :fax_number %>
+        <%= f.text_field :fax_number, class: 'form-control' %>
+      </div>
+
+      <div>
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+
+      <div>
+        <%= f.label :address %>
+        <%= f.text_area :address, class: 'form-control' %>
+      </div>
+
+      <div>
+        <%= f.submit 'Update', class: 'btn btn-primary'%>
+      </div>
+
+      </section>
     <% end %>
-
-    <div>
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control' %>
-    </div>
-
-    <div>
-      <%= f.label :phone_number %>
-      <%= f.text_field :phone_number, class: 'form-control' %>
-    </div>
-
-    <div>
-      <%= f.label :fax_number %>
-      <%= f.text_field :fax_number, class: 'form-control' %>
-    </div>
-
-    <div>
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
-    </div>
-
-    <div>
-      <%= f.label :address %>
-      <%= f.text_area :address, class: 'form-control' %>
-    </div>
-
-    <div>
-      <%= f.submit 'Update', class: 'btn btn-primary'%>
-    </div>
-
-  <% end %>
+  </div>
 </div>

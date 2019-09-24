@@ -4,19 +4,21 @@
       <%= alert_generator(error) %>
     <% end %>
   <% end %>
+  <div class="display-card form">
+    <section>
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+      <div>
+        <label class='btn'>
+          Upload your Image <%= f.file_field :main_img, style: 'display:none;' %>
+        </label>
+      </div>
+    </section>
   </div>
-
-  <div>
-    <label class='btn btn-info btn-sm'>
-      Upload your Image <%= f.file_field :main_img, style: 'display:none;' %>
-    </label>
-  </div>
-
-  <div>
-    <%= f.submit 'Save Service Category', class: 'btn btn-primary'%>
-  </div>
-<% end %>
+    <div class='submit'>
+      <%= f.submit 'Save Service Category'%>
+    </div>
+  <% end %>

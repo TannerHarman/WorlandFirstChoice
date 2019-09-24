@@ -5,46 +5,55 @@
     <% end %>
   <% end %>
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
+    <div class="display-card form">
+    <section>
+      <div>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
 
-  <div>
-    <%= f.label :subtitle %>
-    <%= f.text_field :subtitle, class: 'form-control' %>
-  </div>
+      <div>
+        <%= f.label :subtitle %>
+        <%= f.text_field :subtitle, class: 'form-control' %>
+      </div>
 
-  <div>
-    <%= f.label :service_sections_id %>
-    <%= f.collection_select(:service_sections_id, ServiceSection.all, :id, :title,
-                             {
-                               selected: @service.service_sections_id,
-                               include_blank: true
-                             },
-                              class: 'form-control'
-                              )
-    %>
-  </div>
+      <div>
+        <%= f.label :service_sections_id %>
+        <%= f.collection_select(:service_sections_id, ServiceSection.all, :id, :title,
+                                {
+                                  selected: @service.service_sections_id,
+                                  include_blank: true
+                                })
+        %>
+      </div>
 
-  <div>
-    <label class='btn btn-info btn-sm'>
-      Upload your Main Image <%= f.file_field :main_img, style: 'display:none;' %>
-    </label>
-  </div>
+      <div>
+        <label class='btn'>
+          Upload your Main Image <%= f.file_field :main_img, style: 'display:none;' %>
+        </label>
+      </div>
 
-  <div>
-    <label class='btn btn-info btn-sm'>
-      Upload your Thumb Image <%= f.file_field :thumb_img, style: 'display:none;' %>
-    </label>
-  </div>
+      <div>
+        <label class='btn'>
+          Upload your Thumb Image <%= f.file_field :thumb_img, style: 'display:none;' %>
+        </label>
+      </div>
 
-  <div>
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control', rows: 10 %>
-  </div>
+      </section>
+    
+      <section class='body'>
 
-  <div>
-    <%= f.submit 'Save Service', class: 'btn btn-primary' %>
-  </div>
+      <div class='body'>
+        <%= f.label :body %>
+        <%= f.text_area :body, class:'body' %>
+      </div>
+
+      </section>
+ </div>
+
+       <div class='submit'>
+        <%= f.submit 'Save Service' %>
+      </div>
+  
 <% end %>
+

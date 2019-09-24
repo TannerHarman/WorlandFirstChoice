@@ -152,6 +152,7 @@ main {
   color: white; 
   text-align: center;
   padding: 15px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -170,6 +171,17 @@ main {
   left: 125px;
   top: 50%;
   transform: translateY(-40%);
+}
+
+.body {
+  min-height: 94.5%;
+  width: 100%;
+  align-self: stretch;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 800px) {
