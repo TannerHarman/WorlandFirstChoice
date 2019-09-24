@@ -1,5 +1,6 @@
 <h2> Edit Wellness Program Page</h2>
 
+ <div class="display-card form">
 <%= form_for(@wellness_program) do |f| %>
 
   <% if @wellness_program.errors.any? %>
@@ -14,26 +15,32 @@
     </div>
   <% end %>
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
+  <section>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
 
-  <div>
-    <%= f.label :subtitle %>
-    <%= f.text_field :subtitle, class: "form-control" %>
-  </div>
+    <div>
+      <%= f.label :subtitle %>
+      <%= f.text_field :subtitle, class: "form-control" %>
+    </div>
 
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description, class: "form-control", rows:10 %>
-  </div>
+    <div>
+      <%= f.label :price %>
+      <%= f.text_area :price, class: "form-control" %>
+    </div>
+  </section>
 
-  <div>
-    <%= f.label :price %>
-    <%= f.text_area :price, class: "form-control" %>
-  </div>
-  
+  <section>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control", rows:10 %>
+    </div>
+  </section>
+
+    </div>
+
   <div>
     <%= f.submit 'update', class: 'btn btn-primary'%>
   </div>

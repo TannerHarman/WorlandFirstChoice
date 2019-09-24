@@ -97,6 +97,9 @@ main {
   text-align: right;
 }
 
+.display-card .info {
+  text-align: left;
+}
 .img iframe {
   height: 100%;
   min-height: 218px;
@@ -194,6 +197,18 @@ main {
   .display-card {
     flex-direction: column-reverse;
     padding: 25px;
+  }
+
+  .form form {
+    flex-direction: column;
+  }
+
+  form section * {
+    margin: 2.5px 0 !important;
+  }
+
+  .form form .body {
+    min-height: 200px;;
   }
 
   .display-card * {
