@@ -1,4 +1,42 @@
 footer {
-  place-self: center;
-  text-align: center;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+} 
+
+footer img {
+  height: 30px;
+  margin: 0 10px;
+}
+
+footer div {
+  display: flex;
+}
+
+footer div span {
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 800px) {
+  footer {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  footer div {
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
+  footer div span {
+    display: none;
+  }
+
+  footer img {
+    height: 50px;
+    margin: 0 10px;
+  }
 }

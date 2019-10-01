@@ -5,14 +5,35 @@
 @import "nav";
 @import "footer";
 
+@font-face {
+  src: font-url('avenir.ttc');
+  font-family: Avenir;
+}
+
+@font-face {
+  src: font-url('ITC-ITCAvantGardePro-Bold.otf');
+  font-family: Garde;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Garde;
+}
+
+p,
+a {
   line-height: 1.5em;
+  font-family: Avenir;
 }
 
 body {
@@ -29,6 +50,7 @@ main {
   align-items: center;
   margin-top: 65px;
   flex: 1;
+  min-height: 100vh;
 }
 
 .items-wrapper {
